@@ -1,0 +1,61 @@
+:root{
+  --bg:#f6f8fb;
+  --card:#fff;
+  --accent:#0b74de;
+  --err:#d9534f;
+  --muted:#666;
+  --radius:10px;
+  --pad:14px;
+  font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#fff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:24px;
+}
+
+.container{
+  width:100%;
+  max-width:520px;
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:0 6px 24px rgba(12,24,48,.08);
+  padding:28px;
+}
+
+h1{margin:0 0 16px;font-size:22px}
+label{display:block;margin-top:12px;font-weight:600}
+input[type="text"],input[type="email"],input[type="password"],input[type="tel"],input[type="number"]{
+  width:100%;
+  padding:10px 12px;
+  margin-top:6px;
+  border:1px solid #e2e7ee;
+  border-radius:8px;
+  font-size:15px;
+  outline: none;
+}
+input:focus{box-shadow:0 0 0 4px rgba(11,116,222,.08); border-color:var(--accent)}
+.error{color:var(--err); font-size:13px; margin-top:6px; min-height:18px}
+.hint{color:var(--muted); font-size:13px; margin-top:6px}
+.checkbox-wrap{margin-top:12px; display:flex; align-items:center; gap:8px}
+button{
+  margin-top:18px;
+  width:100%;
+  padding:12px;
+  background:var(--accent);
+  color:white;
+  border:0;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+}
+button:disabled{opacity:.6;cursor:not-allowed}
+#formMessage{margin-top:12px; font-size:14px}
+.sr{position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap}
+@media(max-width:520px){.container{padding:18px}}

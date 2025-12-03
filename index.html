@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Form Validator — Day 2 Project</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <main class="container">
+        <h1>Sign Up</h1>
+        <form id="signupForm" novalidate aria-describedby="formHelp">
+            <p id="formHelp" class="sr">All fields marked * are required.</p>
+
+            <label for="fullname">Full name *</label>
+            <input id="fullname" name="fullname" type="text" autocomplete="name" required />
+            <div class="error" id="err-fullname" aria-live="polite"></div>
+
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+            <div class="error" id="err-email" aria-live="polite"></div>
+
+            <label for="username">Username *</label>
+            <input id="username" name="username" type="text" required />
+            <div class="error" id="err-username" aria-live="polite"></div>
+
+            <label for="password">Password *</label>
+            <input id="password" name="password" type="password" autocomplete="new-password" required />
+            <div class="hint">At least 8 chars, 1 uppercase, 1 number, 1 special char.</div>
+            <div class="error" id="err-password" aria-live="polite"></div>
+
+            <label for="confirm">Confirm Password *</label>
+            <input id="confirm" name="confirm" type="password" required />
+            <div class="error" id="err-confirm" aria-live="polite"></div>
+
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" />
+            <div class="error" id="err-phone" aria-live="polite"></div>
+
+            <label for="age">Age (optional)</label>
+            <input id="age" name="age" type="number" min="13" max="120" />
+            <div class="error" id="err-age" aria-live="polite"></div>
+
+            <div class="checkbox-wrap">
+                <input id="terms" name="terms" type="checkbox" required />
+                <label for="terms">I agree to the Terms and Conditions *</label>
+                <div class="error" id="err-terms" aria-live="polite"></div>
+            </div>
+
+            <button id="submitBtn" type="submit">Create account</button>
+            <div id="formMessage" role="status" aria-live="polite"></div>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
